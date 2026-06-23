@@ -86,3 +86,15 @@ heated or stirred.
   base leaves a trailing `\r`, so on a real device it can fall through
   to `float(...)` and raise. Read the name via the raw response and
   strip it yourself.
+
+### docs/readme-demo-video — embed ESP32-S3 demo video in README (issue #5)
+Goal: make the demo clip uploaded to `media/`
+(`KakaoTalk_20260623_212547337.mp4`) viewable from `README.md`. The clip
+shows the IKA RCT digital hotplate controlled from an ESP32-S3 through
+this project. A GitHub remote exists, so issue #5 and a PR were opened.
+
+- [x] Add a "Demo" section near the top of `README.md`
+- [x] Embed the clip via an HTML `<video>` player (raw URL on `main`)
+      with a markdown download-link fallback
+- [x] Track the `media/` asset in git
+- [x] Open PR (Closes #5) and merge into `main`
