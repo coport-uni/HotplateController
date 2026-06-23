@@ -9,6 +9,27 @@ device, and reading/controlling it in a few lines of code.
 
 ---
 
+## Demo
+
+Controlling the IKA RCT digital hotplate from an **ESP32-S3** through
+this project: the board reads the live plate temperature and stir speed
+and drives the setpoints, heater, and motor over the monitoring server.
+
+<video
+  src="https://github.com/coport-uni/HotplateController/raw/main/media/KakaoTalk_20260623_212547337.mp4"
+  controls
+  width="640">
+  Your browser cannot play this clip inline.
+  <a href="media/KakaoTalk_20260623_212547337.mp4">Download the demo video</a>
+  instead.
+</video>
+
+> If the player does not appear on GitHub,
+> [download the demo video](media/KakaoTalk_20260623_212547337.mp4)
+> directly.
+
+---
+
 ## What is this?
 
 The **IKA Plate (RCT digital)** is a laboratory **hotplate magnetic
