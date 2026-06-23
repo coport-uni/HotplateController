@@ -1,0 +1,44 @@
+menu "Hotplate monitor"
+
+config HOTPLATE_WIFI_SSID
+    string "WiFi SSID"
+    default "TP_Link_0624"
+    help
+        WPA2-Personal SSID. Leave empty to skip WiFi bring-up; the UI
+        shows a "configure WiFi" message.
+
+config HOTPLATE_WIFI_PASSWORD
+    string "WiFi password"
+    default "peal2024"
+    help
+        WPA2-Personal passphrase. Stored in the local sdkconfig only.
+
+config HOTPLATE_SERVER_URL
+    string "Hotplate server base URL"
+    default "http://192.168.1.129:17048"
+    help
+        Base URL of the HotplateController FastAPI server. Include the
+        scheme and port. A trailing slash is optional.
+
+config HOTPLATE_POLL_INTERVAL_S
+    int "Status poll interval (seconds)"
+    default 2
+    range 1 60
+    help
+        How often to GET /status from the server.
+
+config HOTPLATE_TEMP_STEP_C
+    int "Temperature button step (C)"
+    default 5
+    range 1 50
+    help
+        How much each temperature +/- button changes the setpoint.
+
+config HOTPLATE_SPEED_STEP_RPM
+    int "Speed button step (rpm)"
+    default 100
+    range 10 500
+    help
+        How much each speed +/- button changes the setpoint.
+
+endmenu
