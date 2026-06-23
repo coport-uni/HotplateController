@@ -1,0 +1,33 @@
+[project]
+name = "hotplate-controller"
+version = "0.1.0"
+description = "Serial controller for the IKA Plate (RCT 5 digital)."
+requires-python = ">=3.9"
+dependencies = [
+    "ika>=2.0",
+    "pyserial>=3.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["hotplate_controller*"]
+
+[tool.ruff]
+line-length = 80
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
