@@ -2,20 +2,20 @@ menu "Hotplate monitor"
 
 config HOTPLATE_WIFI_SSID
     string "WiFi SSID"
-    default ""
+    default "TP_Link_0624"
     help
         WPA2-Personal SSID. Leave empty to skip WiFi bring-up; the UI
         shows a "configure WiFi" message.
 
 config HOTPLATE_WIFI_PASSWORD
     string "WiFi password"
-    default ""
+    default "peal2024"
     help
         WPA2-Personal passphrase. Stored in the local sdkconfig only.
 
 config HOTPLATE_SERVER_URL
     string "Hotplate server base URL"
-    default "http://192.168.0.42:17048"
+    default "http://192.168.1.129:17048"
     help
         Base URL of the HotplateController FastAPI server. Include the
         scheme and port. A trailing slash is optional.
