@@ -1,7 +1,7 @@
 [project]
 name = "hotplate-controller"
 version = "0.1.0"
-description = "Serial controller for the IKA Plate (RCT 5 digital)."
+description = "Serial controller for the IKA Plate (RCT digital)."
 requires-python = ">=3.9"
 dependencies = [
     "ika>=2.0",

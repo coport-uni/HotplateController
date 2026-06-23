@@ -1,4 +1,4 @@
-"""Demo scenario for the IKA RCT 5 digital controller.
+"""Demo scenario for the IKA RCT digital controller.
 
 Runs the :class:`RctDigital` features in order:
 

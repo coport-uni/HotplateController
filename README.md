@@ -1,6 +1,6 @@
 # HotplateController
 
-> Control an **IKA RCT 5 digital** magnetic stirring hotplate from
+> Control an **IKA RCT digital** magnetic stirring hotplate from
 > Python, over a single USB cable.
 
 This guide assumes you have **never used this device or the `ika`
@@ -11,10 +11,10 @@ device, and reading/controlling it in a few lines of code.
 
 ## What is this?
 
-The **IKA Plate (RCT 5 digital)** is a laboratory **hotplate magnetic
-stirrer**: it heats a sample and spins a magnetic stir bar inside it. The
-device has a USB port, so a computer can read its sensors and send it
-commands.
+The **IKA Plate (RCT digital)** is a laboratory **hotplate magnetic
+stirrer**: it heats a sample and spins a magnetic stir bar in the
+vessel sitting on its plate. The device has a USB port, so a computer
+can read its sensors and send it commands.
 
 This project is a small, friendly Python wrapper around that. Instead of
 learning the low-level serial protocol, you write:
@@ -48,7 +48,7 @@ detection).
 
 - A computer running **Linux** (tested on Ubuntu / Docker).
 - **Python 3.9 or newer**.
-- The **IKA RCT 5 digital**, powered on, connected with the included
+- The **IKA RCT digital**, powered on, connected with the included
   **USB A–B cable**.
 - No driver to install: on Linux the device appears automatically (via
   the built-in `cdc_acm` kernel module).

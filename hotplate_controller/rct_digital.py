@@ -1,4 +1,4 @@
-"""High-level controller for the IKA Plate (RCT 5 digital).
+"""High-level controller for the IKA Plate (RCT digital).
 
 This is a thin domain wrapper around ``ika.magnetic_stirrer``. The
 ``ika`` package does the serial work; this wrapper adds the parts the
@@ -26,7 +26,7 @@ from .limits import (
 
 
 class RctDigital:
-    """Control an IKA RCT 5 digital over its USB virtual COM port."""
+    """Control an IKA RCT digital over its USB virtual COM port."""
 
     def __init__(
         self,

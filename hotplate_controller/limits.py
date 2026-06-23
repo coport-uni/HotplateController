@@ -1,4 +1,4 @@
-"""Device limits and value validation for the IKA RCT 5 digital.
+"""Device limits and value validation for the IKA RCT digital.
 
 These constants and helpers come from the device manual
 (``docs/EN_IKA Plate_RCT 5 digital -english.pdf``), which the ``ika``

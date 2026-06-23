@@ -1,4 +1,4 @@
-"""Serial controller for the IKA Plate (RCT 5 digital)."""
+"""Serial controller for the IKA Plate (RCT digital)."""
 
 from .errors import (
     RctCommError,

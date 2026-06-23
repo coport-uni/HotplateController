@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Real-device verification for the IKA RCT 5 digital.
+# Real-device verification for the IKA RCT digital.
 #
 # Step 1 (non-actuating): query the device identity with IN_NAME.
 # Step 2 (fallback, only if step 1 fails): change the temperature
