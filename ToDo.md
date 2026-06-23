@@ -24,6 +24,25 @@ ranges, error codes). Target environment: Linux/Docker, `/dev/ttyACM*`.
 Note: no git remote is configured for this repo, so the GitHub issue /
 PR steps from CLAUDE.md Section 4 are not applicable for this task.
 
+### feature/monitoring-server — FastAPI monitor/control server (port 17048)
+Goal: expose temperature and speed monitoring and control of the RCT
+digital over HTTP on port 17048, so an ESP32 (and a browser) can read
+status and drive setpoints/heater/motor. Reuse the existing `RctDigital`
+reads/setters and `find_rct_port`. Serialize the blocking serial port
+behind a single background poller plus a lock.
+
+- [x] Add `fastapi` + `uvicorn[standard]` to `pyproject.toml` dependencies
+- [x] `hotplate_controller/server.py` — `DeviceMonitor` (poller thread +
+      lock + snapshot) and FastAPI app with lifespan; GET status/
+      temperature/speed/health, POST control endpoints, HTML dashboard
+- [x] `docs/server_api.md` — endpoint reference with curl + ESP32
+      `HTTPClient` examples
+- [x] `tests/test_server.py` — TestClient over a fake `RctDigital`
+      (status shape, 422 on out-of-range, control dispatch)
+- [x] `claude_test/poke_server.py` — live-server probe script + README row
+- [x] Run ruff + pytest (ruff clean, 33 passed), then open PR
+- [ ] Verify on the real device on `/dev/ttyACM*`
+
 ### feature/esp32-client — ESP-BOX-3 client for the monitoring server
 Goal: an ESP32-S3 (ESP-BOX-3) ESP-IDF firmware under `external/ESP32S3/`
 that connects to the FastAPI server (port 17048) over WiFi, monitors
