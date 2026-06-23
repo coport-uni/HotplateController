@@ -24,6 +24,24 @@ ranges, error codes). Target environment: Linux/Docker, `/dev/ttyACM*`.
 Note: no git remote is configured for this repo, so the GitHub issue /
 PR steps from CLAUDE.md Section 4 are not applicable for this task.
 
+### feature/esp32-client — ESP-BOX-3 client for the monitoring server
+Goal: an ESP32-S3 (ESP-BOX-3) ESP-IDF firmware under `external/ESP32S3/`
+that connects to the FastAPI server (port 17048) over WiFi, monitors
+temperature/speed on the LCD, and controls the hotplate (setpoints,
+heater, motor) from the touchscreen. Modeled on the SmartPlugController
+ESP-BOX-3 example. A GitHub remote now exists, so issue #3 and a PR were
+opened for this task.
+
+- [x] Project/build files (CMakeLists, sdkconfig.defaults,
+      idf_component.yml, Kconfig.projbuild)
+- [x] `main/network.c/.h` — WiFi STA bring-up (HOTPLATE_* config)
+- [x] `main/hotplate_client.c/.h` — GET /status poll + POST control task
+- [x] `main/ui.c/.h` — LVGL readings panel + touch control buttons
+- [x] `main/buttons_check.c/.h` + `main/main.c` — buttons and wiring
+- [x] `external/ESP32S3/README.md` — build/flash/config guide
+- [x] Open PR (not compiled in CI; no ESP-IDF toolchain here)
+- [ ] Build/flash on real ESP-BOX-3 against the running server
+
 ## Completed
 
 ### feat/rct-digital-comms — RCT digital serial communication (DONE)
